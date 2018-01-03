@@ -31,6 +31,12 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::delete('packages/{package}', 'TravelPackagesController@destroy');
 });
 
+//Route::get('packages', 'TravelPackagesController@index');
+//Route::get('packages/{package}', 'TravelPackagesController@show');
+//Route::post('packages', 'TravelPackagesController@store');
+//Route::put('packages/{package}', 'TravelPackagesController@update');
+//Route::delete('packages/{package}', 'TravelPackagesController@destroy');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
