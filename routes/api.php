@@ -13,6 +13,16 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+/**
+ **Basic Routes for a RESTful service:
+ **Route::get($uri, $callback);
+ **Route::post($uri, $callback);
+ **Route::put($uri, $callback);
+ **Route::delete($uri, $callback);
+ **
+ */
+
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('packages', 'TravelPackagesController@index');
     Route::get('packages/{package}', 'TravelPackagesController@show');
