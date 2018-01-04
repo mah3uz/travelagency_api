@@ -24,7 +24,7 @@ class TravelPackagesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
