@@ -14,6 +14,7 @@
         <h2 style="text-align: center">Laravel React App</h2>
         <div id="root"></div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

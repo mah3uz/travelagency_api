@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Package from './travelPackage'
-import AddPackage from './AddPackage'
+// import AddPackage from './AddPackage'
 
 /* Main React component */
 class Main extends Component {
@@ -16,7 +16,7 @@ class Main extends Component {
             currentPackage: null,
         }
 
-        this.handleAddPackage = this.handleAddPackage().bind(this);
+        // this.handleAddPackage = this.handleAddPackage().bind(this);
     }
 
     /* componentDidMount() is a lifecycle method
@@ -63,29 +63,29 @@ class Main extends Component {
         this.setState({ currentPackage:travelPackage });
     }
 
-    handleAddPackage(travelPackage) {
-        travelPackage.price = Number(travelPackage.price);
-
-        // Fetch API for post request.
-        fetch('/api/packages', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(travelPackage)
-        })
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                // Update the state of the Package and currentPackage.
-                this.setState((prevState) => ({
-                    travelPackages: prevState.travelPackages.concat(data),
-                    currentPackage: data
-                }))
-            })
-    }
+    // handleAddPackage(travelPackage) {
+    //     travelPackage.price = Number(travelPackage.price);
+    //
+    //     // Fetch API for post request.
+    //     fetch('/api/packages', {
+    //         method: 'post',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(travelPackage)
+    //     })
+    //         .then(response => {
+    //             return response.json()
+    //         })
+    //         .then(data => {
+    //             // Update the state of the Package and currentPackage.
+    //             this.setState((prevState) => ({
+    //                 travelPackages: prevState.travelPackages.concat(data),
+    //                 currentPackage: data
+    //             }))
+    //         })
+    // }
 
     render() {
 
@@ -113,7 +113,7 @@ class Main extends Component {
 
 
                 <Package travelPackage={this.state.currentPackage} />
-                <AddPackage onAdd={this.handleAddPackage} />
+                {/*<AddPackage onAdd={this.handleAddPackage} />*/}
 
             </div>
         );
